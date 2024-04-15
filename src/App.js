@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { Sirecomponent } from './components/sirecomponent';
+import { Damcomponent } from './components/damcomponent';
+import { FoalComponent } from './components/foalcomponent';
 
 function App() {
+  const [mareGenotype, setMareGenotype] = useState({
+    extension1: 'E',
+    extension2: 'E'
+  });
+
+  const [stallionGenotype, setStallionGenotype] = useState({
+    extension1: 'E',
+    extension2: 'E'
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='forms'>
+        <div>
+          <Sirecomponent stallionGenotype={stallionGenotype} setStallionGenotype={setStallionGenotype} />
+        </div>
+        <div>
+          <Damcomponent mareGenotype={mareGenotype} setMareGenotype={setMareGenotype} />
+        </div>
+        <FoalComponent mareGenotype={mareGenotype} stallionGenotype={stallionGenotype} />
+      </div>
     </div>
   );
 }
