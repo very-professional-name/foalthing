@@ -6,13 +6,15 @@ import { FoalComponent } from './components/foalcomponent';
 
 function App() {
   const [mareGenotype, setMareGenotype] = useState({
-    extension1: 'E',
-    extension2: 'E'
+    extension: { allele1: 'E', allele2: 'E' },
+    agouti: { allele1: 'A', allele2: 'A' },
+    dun: { allele1: 'n', allele2: 'n' }
   });
 
   const [stallionGenotype, setStallionGenotype] = useState({
-    extension1: 'E',
-    extension2: 'E'
+    extension: { allele1: 'E', allele2: 'E' },
+    agouti: { allele1: 'A', allele2: 'A' },
+    dun: { allele1: 'n', allele2: 'n' }
   });
 
   return (
